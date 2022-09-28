@@ -7,6 +7,7 @@ void main() => runApp(const PerguntaApp());
 class _PerguntaAppState extends State<PerguntaApp> {
   //esta classe vai gerenciar o estado
   var _perguntaSelecionada = 0;
+  var _pontuacaoTotal = 0;
 
   final _perguntas = [
     {
@@ -38,11 +39,12 @@ class _PerguntaAppState extends State<PerguntaApp> {
     },
   ];
 
-  void _responder() {
+  void _responder(int pontuacao) {
     if (temPerguntaSelecionada) {
       setState(() {
         //gerencia as aterações de estados
         _perguntaSelecionada++;
+        _pontuacaoTotal += pontuacao;
       });
     }
   }
