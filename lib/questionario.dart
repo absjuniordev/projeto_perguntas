@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import './questao.dart';
 import './resposta.dart';
@@ -11,7 +9,8 @@ class Questionario extends StatelessWidget {
 
   const Questionario(
       //nomeado
-      {required this.perguntas,
+      {super.key,
+      required this.perguntas,
       required this.perguntaSelecionada,
       required this.quandoResponder});
 

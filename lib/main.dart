@@ -53,6 +53,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
     return _perguntaSelecionada < _perguntas.length;
   }
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -62,7 +63,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
                 perguntas: _perguntas,
                 perguntaSelecionada: _perguntaSelecionada,
                 quandoResponder: _responder)
-            : const Resultado(),
+            : Resultado(_pontuacaoTotal),
       ),
     );
   }
@@ -73,6 +74,7 @@ class PerguntaApp extends StatefulWidget {
 
   //o 'runApp(PerguntaApp())' identifica q o componente retorna um 'State'
   @override
+  // ignore: library_private_types_in_public_api
   _PerguntaAppState createState() {
     //
     return _PerguntaAppState();
